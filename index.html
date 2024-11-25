@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marvel Mad Lib Form</title>
+  <style>
+    /* General Styles */
+    html, body {
+      height: 100%;
+      margin: 0;
+      background-image: url('https://cdn.marvel.com/u/prod/marvel/images/OpenGraph-TW-1200x630.jpg'); /* Replace with your Marvel image URL */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; /* Ensures footer is pushed to the bottom */
+      color: #eaeaea; /* Adjusted for better readability */
+      background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for readability */
+    }
+
+    h1 {
+      text-align: center;
+      color: #ffcc00; /* Marvel yellow for heading */
+      margin-top: 20px;
+    }
+
+    /* Form Container */
+    form {
+      width: 70%; /* Increased width to 70% of the viewport */
+      margin: 20px auto;
+      padding: 30px; /* More padding for better spacing */
+      background: rgba(0, 0, 0, 0.7); /* Dark background for form */
+      border: 1px solid #444;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: #ffcc00; /* Marvel yellow for labels */
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #555;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 14px;
+      background-color: #1e1e2f;
+      color: #eaeaea;
+    }
+
+    input[type="text"]:focus {
+      border-color: #ffcc00;
+      outline: none;
+      box-shadow: 0 0 5px #ffcc00;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background-color: #ffcc00;
+      color: #1e1e2f;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #e6b800;
+      transform: scale(1.02);
+    }
+
+    button:active {
+      background-color: #d4a700;
+      transform: scale(0.98);
+    }
+
+    /* Footer Styles */
+    footer {
+      text-align: center;
+      padding: 10px 0;
+      background-color: #333;
+      color: #eaeaea;
+      border-top: 1px solid #444;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    #lastModified {
+      font-weight: bold;
+      color: #ffcc00;
+    }
+  </style>
+</head>
+<body>
+  <h1>Fill in the Marvel Mad Lib!</h1>
+  <form method="POST" action="/ITC505/lab-7/">
+    <label for="adjective">Adjective (e.g., heroic, brave):</label>
+    <input type="text" name="adjective" id="adjective" required>
+
+    <label for="noun">Noun (e.g., superhero, villain):</label>
+    <input type="text" name="noun" id="noun" required>
+
+    <label for="verb">Verb (present tense, e.g., run, fight):</label>
+    <input type="text" name="verb" id="verb" required>
+
+    <label for="pluralNoun">Plural Noun (e.g., heroes, villains):</label>
+    <input type="text" name="pluralNoun" id="pluralNoun" required>
+
+    <label for="adverb">Adverb (e.g., quickly, bravely):</label>
+    <input type="text" name="adverb" id="adverb" required>
+
+    <!-- Added Fields -->
+    <label for="place">Place (e.g., New York, Wakanda):</label>
+    <input type="text" name="place" id="place" required>
+
+    <label for="timeOfDay">Time of Day (e.g., morning, midnight):</label>
+    <input type="text" name="timeOfDay" id="timeOfDay" required>
+
+    <button type="submit">Submit</button>
+  </form>
+  <footer>
+    <p>Last updated: 
+        <span id="lastModified"></span>
+    </p>
+  </footer>
+  <script type="text/javascript">
+    var x = document.lastModified;
+    document.getElementById('lastModified').textContent = x;
+  </script>
+</body>
+</html>
